@@ -1,0 +1,36 @@
+
+.containerTable{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    background: white;
+    border-radius: 10px;
+}
+
+.container{
+    padding-top: 6%;
+    padding-left: 8%;
+}
+
+
+@media screen and (max-width: 1366px) {
+
+    .containerTable{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        background: white;
+        border-radius: 10px;
+    }
+
+
+    .container{
+        padding-top: 10%;
+        padding-left: 5%;
+    }
+
+}
