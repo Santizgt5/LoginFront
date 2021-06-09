@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../models/user.model';
+import { AuthService } from '../services/auth.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-users-list',
@@ -7,9 +10,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 
-  constructor() { }
+
+  usuarios: Usuario[] = [];
+
+  constructor(private authService: AuthService) { 
+  }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+
+  eliminarUsuario( id:string ){
+    this.authService.deleteUser(id).subscribe(resp => {
+      if(resp){
+        this.getUsers();
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario eliminado',
+          text: 'El usuario se ha eliminado correctamente',
+        })
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'El usuario no se ha podido eliminar',
+        })
+      }
+    })
+  }
+
+  getUsers() {
+    this.usuarios = [];
+    this.authService.getUsers().subscribe((resp:any) => {
+      resp.forEach(user => {
+        let usuario = new Usuario();
+        usuario.id = user.id
+        usuario.correo = user.correo;
+        usuario.nombre = user.nombre;
+        this.usuarios.push(usuario);
+      });
+    })
   }
 
 }

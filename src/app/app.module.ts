@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms"
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PerfilUserComponent } from './perfil-user/perfil-user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,23 @@
 <div class="center">
     <h1>Registro</h1>
-    <form method="post"> 
+    <form #register="ngForm"> 
         <div class="txt_field" >
-            <input type="text" required>
+            <input type="text" required [(ngModel)]="usuario.nombre" name="nombre">
             <span></span>
             <label for="">Nombre</label>
         </div>
         <div class="txt_field" >
-            <input type="text" required>
+            <input type="text" required [(ngModel)]="usuario.correo" name="correo">
             <span></span>
             <label for="">Correo</label>
         </div>
         <div class="txt_field" >
-            <input type="password" required>
+            <input type="password" required [(ngModel)]="usuario.password" name="password">
             <span></span>
             <label for="">Contraseña</label>
         </div>
         <div class="txt_field" >
-            <input type="password" required>
+            <input type="password" required [(ngModel)]="confirmPassword" name="confirmPassword">
             <span></span>
             <label for="">Confirmar contraseña</label>
         </div>
@@ -29,7 +29,7 @@
                 <option value="Comun">Comun</option>
             </select>
         </div> -->
-        <input type="submit" value="Registrarse">
+        <button type="submit" (click)="registerUser(register)" >Registrar</button>
         <div class="signup_link">
             ¿Tienes cuenta? Inicia <a routerLink="/login">aqui</a>
         </div>
