@@ -18,6 +18,12 @@ td i{
     cursor: pointer;
 }
 
+.botonAbajo button{
+    position: absolute;
+    top: 80%;
+    transform: translate(30%, 80%);
+}
+
 
 @media screen and (max-width: 1366px) {
 

@@ -2,16 +2,19 @@
     <div class="m-3">
         <label for="">Nombre:</label>
         <br>
-        <label for="">Santiago Alvarez</label>
+        <label for="">{{ user.nombre }}</label>
     </div>
     <div class="m-3">
         <label for="">Ultima hora de ingreso:</label>
         <br>
-        <label for="">14 de agosto de 1998</label>
+        <label for="">{{ fecha }}</label>
     </div>
     <div class="m-3">
         <label for="">Cambiar contraseña</label>
         <br>
-        <button type="button" class="btn btn-info">Cambiar</button>
+        <button type="button" class="btn btn-info" [routerLink]="['/editUser', user.correo]" >Cambiar</button>
     </div>
+</div>
+<div class="botonAbajo">
+    <button type="button" class="btn btn-danger" (click)="cerrar()">Cerrar Sesion</button>
 </div>

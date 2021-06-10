@@ -15,9 +15,13 @@
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{ usuario.nombre }}</td>
                 <td>{{ usuario.correo }}</td>
-                <td><i class="fas fa-trash-alt m-2" (click)="eliminarUsuario( usuario.id )" ></i><i class="fas fa-edit"></i></td>
+                <td><i class="fas fa-trash-alt m-2" (click)="eliminarUsuario( usuario.id )" ></i><i class="fas fa-edit" [routerLink]="['/editUser', usuario.correo]"></i></td>
               </tr>
             </tbody>
           </table>
     </div>
+</div>
+
+<div class="botonAbajo">
+  <button type="button" class="btn btn-danger" (click)="cerrar()">Cerrar Sesion</button>
 </div>

@@ -8,7 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms"
+import { FormsModule } from "@angular/forms";
+import { EditUserComponent } from './edit-user/edit-user.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from "@angular/forms"
     LoginComponent,
     RegisterComponent,
     UsersListComponent,
-    PerfilUserComponent
+    PerfilUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

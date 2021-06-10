@@ -26,10 +26,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit( ): void {
   }
 
-
+  //Metodo para registar a el usuario
   registerUser({valid, value}){
-    console.log(valid);
-    console.log(value);
     if(!valid){
       return;
     }
@@ -37,7 +35,8 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this.authService.userRegister(this.usuario).subscribe(resp => {
-      console.log(resp);
+      
+      this.route.navigateByUrl('/login');
     });
   }
 

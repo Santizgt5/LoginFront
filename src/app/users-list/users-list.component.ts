@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../models/user.model';
 import { AuthService } from '../services/auth.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
@@ -13,7 +14,8 @@ export class UsersListComponent implements OnInit {
 
   usuarios: Usuario[] = [];
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService: AuthService,
+              private route: Router) { 
   }
 
   ngOnInit(): void {
@@ -51,6 +53,11 @@ export class UsersListComponent implements OnInit {
         this.usuarios.push(usuario);
       });
     })
+  }
+
+  cerrar() {
+    localStorage.clear();
+    this.route.navigateByUrl('/login');
   }
 
 }
